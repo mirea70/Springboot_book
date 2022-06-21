@@ -11,7 +11,7 @@ sourceCompatibility = 1.8
 // repositories : 각종 의존성(라이브러리)들을 어떤 어떤 원격 저장소에서 받을지를 정한다.
 repositories {
     mavenCentral()
-    jcenter()
+//    jcenter()
 }
 
 // for Junit 5

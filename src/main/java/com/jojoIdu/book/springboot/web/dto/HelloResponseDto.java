@@ -1,4 +1,4 @@
-package com.jojoIdu.book.web.dto;
+package com.jojoIdu.book.springboot.web.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
