@@ -19,9 +19,9 @@ import java.util.Collections;
 
 @RequiredArgsConstructor
 @Service
-// OAuth2UserService : OAuth2UserService를 구현한 객체는 클라이언트에 부여된 액세스 토큰을 사용해, UserInfo Endpoint에서
+// OAuth2UserService : OAuth2UserService를 구현한 객체는 클라이언트에 부여된 액세스 토큰을 사용해, 소셜 UserInfo Endpoint에서
 // 리소스 소유자의 사용자 속성을 얻고 OAuth2 사용자 형태로 인증된 주체를 반환하는 역할을 한다.
-// OAuth2UserRequest : OAuth2UserService가 UserInfo Endpoint에 대한 요청을 시작할 때 사용하는 요청
+// OAuth2UserRequest : OAuth2UserService가 UserInfo Endpoint에 대한 요청을 시작할 때 사용하는 요청 --> 소셜로그인한 사용자의 정보가 담겨있다.
 // OAuth2User : OAuth 2.0 Provider(구글)에 등록된 사용자 주체 표현입니다.
 // OAuth 2.0 사용자는 이름, 중간 이름, 성, 이메일, 전화 번호, 주소 등과 같은 하나 이상의 특성으로 구성됩니다.
 // 각 사용자 속성은 "이름"과 "값"을 가지며 getAttributes()의 "이름"으로 키 지정됩니다.
@@ -32,8 +32,8 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {    // OAuth2UserRequest : 로그인 성공된 사용자 정보 요청 클래스
         OAuth2UserService<OAuth2UserRequest, OAuth2User>
-                delegate = new DefaultOAuth2UserService();
-        OAuth2User oAuth2User = delegate.loadUser(userRequest);   // 로그인한 사용자의 주체를 oAuth2User에 저장
+                delegate = new DefaultOAuth2UserService();     // 소셜 로그인 사전 작업
+        OAuth2User oAuth2User = delegate.loadUser(userRequest);   // 소셜 로그인한 사용자의 주체를 oAuth2User에 저장
 
 
         // registrationId : 현재 로구인 진행중인 서비스를 구분 , 지금은 구글만 사용해 불필요 -> 네이버 로그인 연동 시, 네이버 로그인인지, 구글 로그인인지 구분하기 위해 사용
@@ -43,7 +43,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         String registrationId = userRequest.getClientRegistration().getRegistrationId();
         String userNameAttributeName = userRequest.getClientRegistration().getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
 
-        // OAuthAttributes : OAuth2UserService를 통해가져온 OAuth2User의 attribute를 담을 클래스.
+        // OAuthAttributes : OAuth2UserService를 통해가져온 OAuth2User(소셜 로그인 유저)의 attribute(속성)를 담을 클래스.
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
         User user = saveOrUpdate(attributes);
