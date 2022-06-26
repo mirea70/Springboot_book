@@ -12,6 +12,7 @@
                 {{/user_Name}}
                 {{^user_Name}}   <!-- userName이 존재하지 않는 경우-->
                         <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                        <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
                 {{/user_Name}}       <!-- href="/oauth2/authorization/google" : 스프링 시큐리티 기본 제공 로그아웃 URL // 컨트롤러 생성필요 X -->
 
 
