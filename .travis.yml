@@ -40,7 +40,7 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
 
     bucket: springboot-book-build # S3 버킷
-    key: freelec-springboot2-wepservice.zip #빌드 파일을 압축해서 전달
+    key: springboot-Book-webservice.zip #빌드 파일을 압축해서 전달
 
     bundle_type: zip # 압축 확장자
     application: springboot-Book-codeDeploy # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션
