@@ -5,9 +5,7 @@
 function find_idle_profile() {
   # 현재 엔진엑스가 바라보는 스프링부트가 정상적으로 수행 중인지 확인
   # 응답값을 HttpStatus로 받는다
-    RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}"
-                                http://localhost/profile
-                                })
+    RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/profile)
 
     if [ ${RESPONSE_CODE} -ge 400 ] # 400보다 크면(즉, 40x/50x 에러 모두 포함)
 
@@ -31,7 +29,7 @@ function find_idle_profile() {
 }
 
 # 쉬고 있는 profile의 port 찾기
-function finde_idle_port() {
+function find_idle_port() {
     IDLE_PROFILE=$(find_idle_profile)
 
     if [ ${IDLE_PROFILE} == real1 ]
