@@ -9,7 +9,7 @@
   <h3> - ‘스프링 부트와 AWS로 혼자 구현하는 웹서비스’ 라는 책을 학습하며 간단한 게시판을 만든 프로젝트입니다. <br/>
        - SpringBoot 기반으로 서버 애플리케이션을 만들고, mustache를 이용해 간단한 뷰도 제작하였습니다. <br/> 
        - AWS를 활용하여 배포, CI/CD 구현 및 무중단 배포까지 진행하였습니다. <br/>
-       - Spring Security와 OAuth2, Session을 활용해 소셜 로그인 기능을 구현했습니다.
+       - Spring Security와 OAuth2, Session을 활용해 소셜 로그인 기능을 구현했습니다. <br/>
        - JPA를 활용하여 게시판의 기본 CRUD를 구현하였습니다.
     <h3>
     </div>
