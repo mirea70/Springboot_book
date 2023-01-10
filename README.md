@@ -14,7 +14,47 @@
     <h3>
     </div>
 </div>
-    <h1> </h1>
+
+# 💨 구현한 기능
+### - 소셜 로그인 기능
+<p align="left"> 
+  <img src="https://user-images.githubusercontent.com/101246806/211680453-62031632-6606-4a78-8834-4a3103295678.png" width = "600">
+</p>
+
+- 메인화면에서 Google Login 버튼을 클릭하면 위처럼 소셜 인증이 시작됩니다.
+- 인증이 완료되면 위처럼 사용자명이 로그인 버튼위치에 나타나고, Logout 버튼이 생성됩니다.
+- Naver 로그인도 구현하였지만 과정이 같으므로 사진은 Google 로그인만 포함하였습니다.
+
+ <br/>
+
+### - 글 등록 기능
+<p align="left"> 
+  <img src="https://user-images.githubusercontent.com/101246806/211680596-fe978a00-791b-420e-99c2-28db2cecf115.png" width = "600">
+</p> 
+
+- 글 등록 버튼을 누르면 글 등록 페이지로 이동 됩니다.
+- 제목, 작성자, 내용을 입력 후 등록 버튼을 누르면
+
+ <br/>
+
+### - 글 수정 기능
+<p align="left"> 
+  <img src="https://user-images.githubusercontent.com/101246806/211680675-cdf44527-17b7-4d7c-80f3-8c8aa2df15cc.png" width = "600">
+</p> 
+
+- 등록된 게시글의 제목을 누르면
+- 해당 게시글의 수정페이지로 이동되며, 수정이가능합니다.
+- 제목과 내용만 수정이 가능하고, 글 번호와 작성자는 입력 자체가 불가능합니다.
+
+<br/>
+
+### - 글 삭제 기능
+<p align="left"> 
+  <img src="https://user-images.githubusercontent.com/101246806/211680865-6e2fb5c5-de65-4e12-ae74-f0bf8f89e0d9.png" width = "600">
+</p> 
+
+- 게시글 수정 페이지에서 삭제 버튼을 누르면 알림 문구가 뜨며, 확인을 누르면 메인 페이지로 이동됩니다.
+
 <div align="center"> 
     <h3> 프로젝트 기간 : 2022.06.15 ~ 2022.07.14 </h3>
 </div>
